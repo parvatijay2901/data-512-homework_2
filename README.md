@@ -45,6 +45,38 @@ In this section, we talk about transforming and combining the [politicians_by_co
 5. In the final step of this sub-section, we generate two more fields: 
 `total_articles_per_capita` that represents the number of articles available for each person in a given country or region and `high_quality_articles_per_capita` that represents the number of high-quality articles available per person. We add the fields and again save the complete data as [articles_per_capita_analysis.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/articles_per_capita_analysis.csv).
 
+It follows this schema:
+```yaml
+columns:
+  - name: "country"
+    type: "string"
+    description: "Name of the country"
+  
+  - name: "region"
+    type: "string"
+    description: "Geographical region the country belongs to"
+  
+  - name: "total_articles"
+    type: "integer"
+    description: "Total number of articles about politicians in the country"
+  
+  - name: "high_quality_articles"
+    type: "integer"
+    description: "Total number of high-quality articles (e.g., FA or GA) about politicians in the country"
+  
+  - name: "population"
+    type: "integer"
+    description: "Total population of the country"
+  
+  - name: "total_articles_per_capita"
+    type: "float"
+    description: "Ratio of total articles to population (i.e., total articles per person)"
+  
+  - name: "high_quality_articles_per_capita"
+    type: "float"
+    description: "Ratio of high-quality articles to population (i.e., high-quality articles per person)"
+```
+
 ### Step 2: Data Analysis/Results
 In this section, we produce six tables in the notebook that provides further insights into data coverage and quality across countries and regions, helping identify trends, benchmark performance, and inform resource allocation.
 - **Top 10 countries by coverage:** The 10 countries with the highest total articles per capita (in descending order) .
