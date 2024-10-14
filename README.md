@@ -6,8 +6,8 @@ The main goal of this homework is to analyze the biases present in English Wikip
 
 ### Key Objectives
 
-- **Data Acquisition:** Clean raw input data by removing duplicates and handling missing values, then use the MediaWiki API and ORES to obtain quality scores for politicians' articles, merge this with population data, and calculate metrics like articles per capita and high-quality articles per capita for countries and regions. Unmatched countries will be documented, while matched data will be saved for further analysis.cles (FA or GA) per capita for both countries and regions.
-- **Data Analysis:** Summarize our findings through six tables: the top and bottom ten countries by coverage, the top and bottom ten countries by high-quality articles, and coverage metrics by geographic regions.
+- **Data Acquisition:** Clean raw input data by removing duplicates and handling missing values, then use the MediaWiki API and ORES to obtain quality scores for politicians' articles, merge this with population data, and calculate metrics like articles per capita and high-quality articles per capita for countries and regions. Unmatched countries should be documented, while matched data should be saved for further analysis.cles (FA or GA) per capita for both countries and regions.
+- **Data Analysis:** Summarize the findings through six tables: the top and bottom ten countries by coverage, the top and bottom ten countries by high-quality articles, and coverage metrics by geographic regions.
 
 This project follows to the best practices for open scientific research as mentioned in chapters "Assessing Reproducibility" and "The Basic Reproducible Workflow Template" of ["The Practice of Reproducible Research: Case Studies and Lessons from the Data-Intensive Sciences"](https://www.ucpress.edu/books/the-practice-of-reproducible-research/paper) publication, ensuring transparency and reproducibility throughout the process.
 
@@ -31,19 +31,19 @@ A few snippets used in the scripts are developed by Dr. David W. McDonald for us
 
 ## Workflow
 
-The code was executed on MacBook Pro. Before running this project, ensure that the [required libraries]() are installed. Additionally, please create the necessary folders and adjust the file paths as required for your environment.
+The code was executed on MacBook Pro. Before running this project, ensure that the [required libraries](https://github.com/parvatijay2901/data-512-homework_2/blob/main/requirements.txt) are installed. Additionally, please create the necessary folders and adjust the file paths as required for your environment.
 
-To run this project, execute the notebook[()]() in the same order. 
+To run this project, execute the notebook[(considering_bias_in_data.ipynb)](https://github.com/parvatijay2901/data-512-homework_2/blob/main/scripts/considering_bias_in_data.ipynb) in the same order. 
 
 ### Step 1: Data Acquisition
 
-In this section, we talk about transforming and combining the [politicians_by_country_AUG.2024.csv]() and [population_by_country_AUG.2024.csv]() datasets to a form required for further analysis.
-1. In the initial step, we clean the raw input dataset by removing duplicates and irrelevant entries and save it as [revised_politicians_by_country_with_pageinfo_AUG.2024.csv]().
-2. We then use MediaWiki's REST API for the EN Wikipedia to get additional fields - `pageid` and `current revision id`. We save the intermediate file as [revised_politicians_by_country_with_pageinfo_AUG.2024.csv]().
-3. In the next step, we obtain the ORES quality predictions for each of the articles using their own API. We combine all the fields and save the intermediate file as [revised_politicians_by_country_with_pageinfo_and_quality_prediction_AUG.2024.csv]().
-4. In the subsequent steps, we combine the revised and complete politicians dataset with the population dataset. We perform some transformations and save the list of countries with no matching Wikipedia articles as [wp_countries-no_match.txt]() and the complete daatset (where we have all the details) as [wp_politicians_by_country.csv]().
+In this section, we talk about transforming and combining the [politicians_by_country_AUG.2024.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/input_data/politicians_by_country_AUG.2024.csv) and [population_by_country_AUG.2024.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/input_data/population_by_country_AUG.2024.csv) datasets to a form required for further analysis.
+1. In the initial step, we clean the raw input dataset by removing duplicates and irrelevant entries and save it as [revised_politicians_by_country_with_pageinfo_AUG.2024.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/revised_politicians_by_country_AUG.2024.csv).
+2. We then use MediaWiki's REST API for the EN Wikipedia to get additional fields - `pageid` and `current revision id`. We save the intermediate file as [revised_politicians_by_country_with_pageinfo_AUG.2024.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/revised_politicians_by_country_with_pageinfo_AUG.2024.csv).
+3. In the next step, we obtain the ORES quality predictions for each of the articles using their own API. We combine all the fields and save the intermediate file as [revised_politicians_by_country_with_pageinfo_and_quality_prediction_AUG.2024.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/revised_politicians_by_country_with_pageinfo_and_quality_prediction_AUG.2024.csv).
+4. In the subsequent steps, we combine the revised and complete politicians dataset with the population dataset. We perform some transformations and save the list of countries with no matching Wikipedia articles as [wp_countries-no_match.txt](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_output_data/wp_countries-no_match.txt) and the complete daatset (where we have all the details) as [wp_politicians_by_country.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_output_data/wp_politicians_by_country.csv).
 5. In the final step of this sub-section, we generate two more fields: 
-`total_articles_per_capita` that represents the number of articles available for each person in a given country or region and `high_quality_articles_per_capita` that represents the number of high-quality articles available per person. We add the fields and again save the complete data as [articles_per_capita_analysis.csv]().
+`total_articles_per_capita` that represents the number of articles available for each person in a given country or region and `high_quality_articles_per_capita` that represents the number of high-quality articles available per person. We add the fields and again save the complete data as [articles_per_capita_analysis.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/articles_per_capita_analysis.csv).
 
 ### Step 2: Data Analysis/Results
 In this section, we produce six tables in the notebook that provides further insights into data coverage and quality across countries and regions, helping identify trends, benchmark performance, and inform resource allocation.
@@ -90,7 +90,7 @@ To enhance the dataset and reduce observed biases, researchers could:
 The project followed the best practices outlined in “The Practice of Reproducible Research” to ensure transparency and ease of replication:
 
 - The project maintained a hierarchical structure, separating scripts and data, into distinct folders (`scripts/` and `data/`) for better organization. 
-- Dependencies were clearly listed in the [requirements.txt]() file. This helps in easy replication of the environment.
+- Dependencies were clearly listed in the [requirements.txt](https://github.com/parvatijay2901/data-512-homework_2/blob/main/requirements.txt) file. This helps in easy replication of the environment.
 - The workflow was automated using Jupyter notebooks. This helps in seamless re-execution of the analysis.
 - We avoided hard coding paths. This made the project more simple and better adaptable for different environments.
 - The scripts and functions are clearly separated to provide anyone looking into the project to have better clarity.
