@@ -6,20 +6,20 @@ The main goal of this homework is to analyze the biases present in English Wikip
 
 ### Key Objectives
 
-- **Data Acquisition:** Clean raw input data by removing duplicates and handling missing values, then use the MediaWiki API and ORES to obtain quality scores for politicians' articles, merge this with population data, and calculate metrics like articles per capita and high-quality articles per capita for countries and regions. Unmatched countries should be documented, while matched data should be saved for further analysis.cles (FA or GA) per capita for both countries and regions.
+- **Data Acquisition:** Clean raw input data by removing duplicates and handling missing values, then use the MediaWiki API and ORES to obtain quality scores for politicians' articles, merge this with population data, and calculate metrics like articles per capita and high-quality articles per capita for countries and regions. Unmatched countries should be documented, while matched data should be saved for further analysis. Further, generate two metrics that tells the count of articles/high-quality articles per capita for both countries and regions.
 - **Data Analysis:** Summarize the findings through six tables: the top and bottom ten countries by coverage, the top and bottom ten countries by high-quality articles, and coverage metrics by geographic regions.
 
 This project follows to the best practices for open scientific research as mentioned in chapters "Assessing Reproducibility" and "The Basic Reproducible Workflow Template" of ["The Practice of Reproducible Research: Case Studies and Lessons from the Data-Intensive Sciences"](https://www.ucpress.edu/books/the-practice-of-reproducible-research/paper) publication, ensuring transparency and reproducibility throughout the process.
 
 ## Licenses
 ### Input Data
-The Wikipedia [Category:Politicians by nationality](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) was crawled to generate a list of Wikipedia article pages about politicians (politicians_by_country_AUG.2024.csv) from a wide range of countries. The webpage licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](f_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License) License. Contributers can share and adapt the material for any purpose, even commercially, as long as they give appropriate credit to Wikipedia, indicate any changes made, and distribute the contributions under the same license.
+The Wikipedia [Category:Politicians by nationality](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) was crawled to generate a list of Wikipedia article pages about politicians (politicians_by_country_AUG.2024.csv) from a wide range of countries. The webpage is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](f_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License) License. Contributers can share and adapt the material for any purpose, even commercially, as long as they give appropriate credit to Wikipedia, indicate any changes made, and distribute the contributions under the same license.
 
 This population dataset (population_by_country_AUG.2024.csv) was downloaded from the [world population data sheet](https://www.prb.org/international/indicator/population/table) published by the Population Reference Bureau. For more information on the permissions, make a request [here](https://www.prb.org/permissions/).
 
 ### Data Generated for Analysis
-To have additional information of the articles, we have used two APIs to crawl,
-- [MediaWiki REST API for the EN Wikipedia](https://www.mediawiki.org/wiki/API:Main_page): We used this API to obtain the `pageid` and `lastrevid`. 
+To have additional information of the articles, we used two APIs to crawl,
+- [`MediaWiki REST API for the EN Wikipedia`](https://www.mediawiki.org/wiki/API:Main_page): We used this API to obtain the `pageid` and `lastrevid`. 
 - [`Objective Revision Evaluation Service (ORES)`](https://www.mediawiki.org/wiki/ORES): We used this API to obtain the quality prediction for each of the published article. 
 
 Both the APIs are licensed under [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License). The Wikimedia Foundation's [Terms of Use](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use) allows users to freely read, print, share, and reuse educational content while contributing to various projects under free licenses. 
@@ -27,7 +27,7 @@ Both the APIs are licensed under [Creative Commons Attribution-ShareAlike 3.0 Un
 ### Repository
 The repository is licensed under the MIT License, and it permits users to freely use, modify, and distribute the code, provided that the original copyright notice and permission notice are included in all copies or substantial portions of the software.
 
-A few snippets used in the scripts are developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
+A few snippets used in the script is developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
 ## Workflow
 
