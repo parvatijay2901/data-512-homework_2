@@ -45,7 +45,7 @@ In this section, we talk about transforming and combining the [politicians_by_co
 5. In the final step of this sub-section, we generate two more fields: 
 `total_articles_per_capita` that represents the number of articles available for each person in a given country or region and `high_quality_articles_per_capita` that represents the number of high-quality articles available per person. We add the fields and again save the complete data as [articles_per_capita_analysis.csv](https://github.com/parvatijay2901/data-512-homework_2/blob/main/data/generated_intermediate_data/articles_per_capita_analysis.csv).
 
-It follows this schema:
+The generated CSV file follows this schema:
 ```yaml
 columns:
   - name: "country"
@@ -62,10 +62,10 @@ columns:
   
   - name: "high_quality_articles"
     type: "integer"
-    description: "Total number of high-quality articles (e.g., FA or GA) about politicians in the country"
+    description: "Total number of high-quality articles (FA or GA) about politicians in the country"
   
   - name: "population"
-    type: "integer"
+    type: "float"
     description: "Total population of the country"
   
   - name: "total_articles_per_capita"
